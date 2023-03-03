@@ -1,0 +1,10 @@
+[Unit]
+Description=example service
+After=network.target
+
+[Service]
+ExecStart=/bin/echo start
+ExecStop=/bin/echo stop
+
+[Install]
+WantedBy=multi-user.target
