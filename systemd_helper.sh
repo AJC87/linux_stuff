@@ -1,6 +1,8 @@
 #!/bin/bash
 # Commands etc for systemd
 
+# TODO: check this works
+
 readonly SERVICE_NAME='example.service'
 
 # If changing the unit file run

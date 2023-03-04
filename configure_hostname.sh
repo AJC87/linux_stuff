@@ -10,7 +10,7 @@ readonly HOSTNAME=''
 # readonly ADDRESS="$(ip addr show "${NETWORK_INTERFACE}")"
 
 # How many spaces do we need?
-sudo sh -c "echo ${ADDRESS} ${HOSTNAME} >> /etc/hosts"
+sudo sh -c "echo '${ADDRESS} ${HOSTNAME}' >> /etc/hosts"
 
 if ! ping -c 1 "${HOSTNAME}"; then
     echo "Can't ping the host with new hostname: ${HOSTNAME}, exiting..."

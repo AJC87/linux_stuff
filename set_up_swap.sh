@@ -16,12 +16,15 @@ mkswap "${SWAP_FILE_NAME}"
 sudo swapon "${SWAP_FILE_NAME}"
 
 # If on Red Hat etc improve security by doing
-# TODO: check if we are using one of those distros
-sudo chown root:root "${SWAP_FILE_NAME}"
-# 600
-sudo chmod u+rw "${SWAP_FILE_NAME}"
+# TODO: check for similar distros
+if [[ -s /etc/redhat-release ]] && [[ grep 'Red Hat' /etc/redhat-release ]]; then
+    echo 'On Red Hat...'
+    sudo chown root:root "${SWAP_FILE_NAME}"
+    # 600
+    sudo chmod u+rw "${SWAP_FILE_NAME}"
+fi
 
-if ! cat /proc/swaps | grep "${SWAP_FILE_NAME}"; then
+if grep -v "${SWAP_FILE_NAME}" /proc/swaps; then
     echo 'Swap file not enabled, exiting...'
     exit 1
 fi

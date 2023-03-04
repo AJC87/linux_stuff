@@ -1,6 +1,8 @@
 #!/bin/bash
 # Script to configure a network interface to use static address instead of DHCP
 
+# TODO: check this works
+
 # TODO: for GCP for now but can adapt it, also for Debian based but can adapt it
 # the interfaces start at ens4 on GCP VMs, may be eth0 onwards elsewhere
 
