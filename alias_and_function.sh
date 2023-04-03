@@ -42,3 +42,19 @@ function dir_space() {
 
     sudo du —maxdepth=1 -hx "${DIRNAME}"
 }
+
+function set_hostname() {
+    local HOSTNAME
+
+    if (( $# == 1 )); then
+        HOSTNAME=$1
+    else
+        echo 'No hostname provided...'
+    fi
+
+    sudo hostnamectl set-hostname "${HOSTNAME}"
+
+    # TODO: do /etc/hosts bit
+}
+
+# docker run --cidfile /tmp/test.cid IMAGE_NAME

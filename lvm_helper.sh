@@ -9,7 +9,7 @@ readonly VOLUME_SIZE='100M'
 readonly LOGICAL_VOLUME='testlvm'
 readonly MOUNT_POINT='/testpoint'
 
-# TODO: can this be done non-interactively, make them logical volume
+# TODO: can this be done non-interactively maybe use parted, make them logical volume
 # sudo fdisk "/dev/${DEVICE_NAME}"
 
 # TODO: do a check with this
